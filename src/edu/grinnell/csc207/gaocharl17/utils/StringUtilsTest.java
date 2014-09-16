@@ -29,4 +29,36 @@ public class StringUtilsTest {
 		assertArrayEquals(new String[] {"a", "b", "c", "/", "p"},
                 StringUtils.splitAt("arbrcr/rp", 'r'));
 	}
+	
+	/*
+	@Test
+	public void testSplitAt5() {
+		assertArrayEquals(new String[] { "a", "b", "c" },
+	            StringUtils.splitCSV("a,b,c"));
+	}*/
+
+	@Test
+	public void testSplitAt6() {
+		assertArrayEquals(new String[] { "a,b", "c" },
+	            StringUtils.splitCSV("\"a,b\",c"));
+	}
+	
+	@Test
+	public void testSplitAt7() {
+		assertArrayEquals(new String[] { "a", "b,b\"", "c" },
+	            StringUtils.splitCSV("a,\"b,b\"\"\",c"));
+	}
+	
+	@Test
+	public void testSplitAt8() {
+		assertArrayEquals(new String[] { "a", "b\"b", "c" }, 
+	            StringUtils.splitCSV("a,\"b\"\"b\",c"));
+	}
+	
+	
+
+
+
+
 }
+
