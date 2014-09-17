@@ -56,7 +56,7 @@ public class Fraction {
 	
 	public Fraction(String input){
 		this.num = new BigInteger(input.substring(0, input.indexOf('/')));
-		this.denom = new BigInteger(input.substring(input.indexOf('/'),input.length()));
+		this.denom = new BigInteger(input.substring(input.indexOf('/') + 1,input.length()));
 	}
 	
 	// +---------+------------------------------------------------------
